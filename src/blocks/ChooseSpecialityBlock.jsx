@@ -105,12 +105,6 @@ const ChooseSpecialityBlock = () => {
             {Specialities[currentSpeciality].priceIntramural != 0 && <StatPoint number={<>{Specialities[currentSpeciality].priceIntramural} <span className='text-3xl font-medium'>тыс. ₽</span></>} className={`flex-col items-start`} text={<>очное обучение</>} />}
             {Specialities[currentSpeciality].priceDistant != 0 && <StatPoint number={<>{Specialities[currentSpeciality].priceDistant} <span className='text-3xl font-medium'>тыс. ₽</span></>} className={`flex-col items-start`} text={<>очно-заочное обучение</>} />}
           </div>
-          {/* <div className={`hidden flex-col justify-center gap-y-7 ${blink ? 'opacity-0' : 'opacity-100'} transition-all xs:flex minxs:hidden`}>
-            {Specialities[currentSpeciality].budgetplace != 0 && <StatPoint number={Specialities[currentSpeciality].budgetplace} text={<>бюджетных<br />мест</>} className={`flex-row items-center`} />}
-            {Specialities[currentSpeciality].paidplace != 0 && <StatPoint number={Specialities[currentSpeciality].paidplace} text={<>платных<br />мест</>} className={`flex-row items-center`} />}
-            {Specialities[currentSpeciality].priceIntramural != 0 && <StatPoint number={<>{Specialities[currentSpeciality].priceIntramural} <span className='text-3xl font-medium'>тыс. ₽</span></>} className={`flex-col items-start`} text={<>очное обучение</>} />}
-            {Specialities[currentSpeciality].priceDistant != 0 && <StatPoint number={<>{Specialities[currentSpeciality].priceDistant} <span className='text-3xl font-medium'>тыс. ₽</span></>} className={`flex-col items-start`} text={<>очно-заочное обучение</>} />}
-          </div> */}
         </div>
         <div className={`flex flex-col  relative xl:w-full top-0 xl:sticky s:hidden`}>
           <div className='w-165 h-130 xl:hidden bg-lightblue-300 dark:bg-black-300 absolute rounded-2.5xl -translate-y-24 translate-x-24  shadow-lightblue-50 dark:shadow-black-50 shadow-3xl' />

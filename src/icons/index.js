@@ -12,6 +12,7 @@ import Exam from "./Exam";
 import Pass from "./Pass";
 import Docs from "./Docs";
 import Vk from "./Vk";
+import Sleep from "./Sleep";
 export {
   Logo,
   Museum,
@@ -26,5 +27,6 @@ export {
   Exam,
   Pass,
   Docs,
-  Vk
+  Vk,
+  Sleep
 };

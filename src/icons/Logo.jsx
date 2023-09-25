@@ -1,15 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import tailwindConfig from '../tailwind.config'
 import resolveConfig from 'tailwindcss/resolveConfig'
+import {ThemeContext} from '../App';
 
 const Logo = ({ className, ...otherprops }) => {
     const config = resolveConfig(tailwindConfig);
     const [fill, setfill] = useState("white");
+
     useEffect(() => {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) || document.querySelector('html').classList.contains('dark')) {
             setfill("#080B16");
         }
-    });
+        else {
+            setfill("white");
+        }
+    },[]);
+
+    const context = useContext(ThemeContext);
+
+    useEffect(()=>{
+        if (context.dark) {
+            setfill("#080B16");
+        }
+        else {
+            setfill("white");
+        }
+    },[context]);
+
     return (
         <svg className={`fill-current ${className}`} {...otherprops} viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
             <span id="fillRule1" className='hidden'></span>
