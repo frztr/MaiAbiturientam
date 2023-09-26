@@ -67,6 +67,8 @@ const OurGraduators = () => {
     }
   ];
 
+  
+
   const pages = ["Биография", "Достижения"];
   const [tabpage, settabpage] = useState(0);
 
@@ -78,17 +80,25 @@ const OurGraduators = () => {
     }
   }, []);
 
+  const Switch = useCallback((val) => {
+    setTimeout(() => {
+      setgraduatorIndex(val);
+      setgradblink(false);
+    }, 300);                
+    setgradblink(true);
+  },[]);
+
   return (
     <div className='flex flex-col w-full py-16 items-center transition-all'>
       <div className='max-w-[1400px]  w-full flex flex-col gap-y-16'>
         <span className='font-bold 1.5xl:ml-24 text-6xl text-blue dark:text-white xxs:w-full xxs:ml-0 xxs:text-center'>
           Наши выпускники
         </span>
-        <div className={`flex flex-col bg-lightblue-300 dark:bg-black-300 p-16 rounded-xl 1.5xl:rounded-none transition-all ${gradblink ? 'opacity-0' : 'opacity-100'}`}>
+        <div className={`flex flex-col h-[80vh] xl:h-[100vh] md:h-[min(85vw,100vh)] s:h-[70vh] xs:h-[100%]  bg-lightblue-300 dark:bg-black-300 p-16 rounded-xl 1.5xl:rounded-none transition-all justify-between ${gradblink ? 'opacity-0' : 'opacity-100'}`}>
           <div className='flex flex-col gap-y-16'>
             <div className='flex flex-row gap-10 items-center xxs:flex-col'>
               <div className='overflow-hidden w-28 h-28 rounded-full aspect-square'>
-                <img className='w-full' src={require(`../resources/${Graduators[graduatorIndex].image}`)} alt="" srcset="" />
+                <img className='w-full' src={require(`../resources/${Graduators[graduatorIndex].image}`)} alt="" srcSet="" />
               </div>
               <div className='flex flex-col gap-y-3 text-blue dark:text-white flex-1 xxs:gap-y-8'>
                 <span className='font-bold text-4xl xxs:text-center'>{Graduators[graduatorIndex].LNM}</span>
@@ -100,7 +110,7 @@ const OurGraduators = () => {
               <div className='flex flex-row gap-x-7 items-start'>
                 {pages.map((x, i) => {
                   if (getpagecontent(i, graduatorIndex) != null)
-                    return (<div className={`${i == tabpage ? 'border-blue dark:border-white' : 'border-transparent'}  border-b-6 pb-2 transition-all`}>
+                    return (<div key={i} className={`${i == tabpage ? 'border-blue dark:border-white' : 'border-transparent'}  border-b-6 pb-2 transition-all`}>
                       <button className={`text-blue dark:text-white  text-3xl font-semibold`} onClick={() => {
                         setTimeout(() => {
                           settabpage(i);
@@ -123,20 +133,20 @@ const OurGraduators = () => {
           <div className='flex flex-row gap-x-4 self-end  xxs:mt-4 '>
             <button className=' rounded-2.5xl w-18 aspect-square flex flex-col items-center justify-center bg-white text-blue hover:bg-blue hover:text-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black transition-all' onClick={() => {
               if (graduatorIndex > 0) {
-                setTimeout(() => {
-                  setgraduatorIndex(graduatorIndex - 1);
-                  setgradblink(false);
-                }, 300);                
-                setgradblink(true);
+                Switch(graduatorIndex-1)
+              }
+              else
+              {
+                Switch(Graduators.length - 1)
               }
             }}><Arrow className={`text-inherit`} /></button>
             <button className=' rounded-2.5xl w-18 aspect-square flex flex-col items-center justify-center bg-white text-blue hover:bg-blue hover:text-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black transition-all' onClick={() => {
               if (graduatorIndex < Graduators.length - 1) {
-                setTimeout(() => {
-                  setgraduatorIndex(graduatorIndex + 1);
-                  setgradblink(false);
-                }, 300);                
-                setgradblink(true);
+                Switch(graduatorIndex+1)
+              }
+              else
+              {
+                Switch(0)
               }
             }}><Arrow className={`text-inherit rotate-180`} /></button>
           </div>

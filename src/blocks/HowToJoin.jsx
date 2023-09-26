@@ -58,15 +58,15 @@ const HowToJoin = () => {
         <div className='flex flex-col gap-y-16 flex-1'>
           <span className='text-6xl font-bold leading-snug text-blue dark:text-white xxs:text-center'>Хочешь к нам?</span>
           <div className='flex flex-col gap-y-10'>
-            {Lists.map((x) => (
-              <List {...x} />
+            {Lists.map((x,i) => (
+              <List {...x} key={i} />
             ))}
           </div>
         </div>
         <div className='flex-1 xl:flex-none'>
           <img src={require("../resources/howtojoinImage.png")}
             className='drop-shadow-3xl shadow-blue-100 dark:shadow-black-200 xl:hidden'
-            alt="" srcset=""
+            alt="" srcSet=""
           />
         </div>
       </div>

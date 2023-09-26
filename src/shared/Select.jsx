@@ -15,7 +15,7 @@ const Select = ({ children, className, onSelectedItemChanged }) => {
                     <Arrow className={`text-blue dark:text-white h-2.5 w-1.5 transition-all  ${active ? 'rotate-90' : '-rotate-90'}`} />
                 </div>
             </div>
-            <div className={`flex overflow-hidden transition-all w-full flex-col gap-y-2 px-2 absolute bottom-0 translate-y-full cursor-pointer bg-lightblue-300 dark:bg-black-300 ${active ? 'py-2' : 'py-0'}`} ref={content} style={{height: active ? content.current.scrollHeight + 16 : 0}}>
+            <div className={`flex overflow-hidden transition-all w-full flex-col gap-y-2 px-2 absolute bottom-0 translate-y-full cursor-pointer bg-lightblue-300 dark:bg-black-300 rounded-b ${active ? 'py-2' : 'py-0'}`} ref={content} style={{height: active ? content.current.scrollHeight + 16 : 0}}>
                 {React.Children.map(children, (x, i) => {
                     if (i != selectedItem) {
                         return (

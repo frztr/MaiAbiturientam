@@ -134,7 +134,7 @@ const OftenQuestions = () => {
       <div className='flex flex-col max-w-[1400px] gap-y-16 w-full'>
         <span className='font-bold text-blue dark:text-white text-6xl xl:text-7xl xxs:text-5xl '>Часто задаваемые вопросы</span>
         <div className='flex flex-col gap-y-8 xl:text-1.5xl xxs:text-2xl'>
-          {Questions.map(x => <Dropdown title={x.title}>
+          {Questions.map((x,i) => <Dropdown key={i} title={x.title}>
             {x.content}
           </Dropdown>)}
         </div>

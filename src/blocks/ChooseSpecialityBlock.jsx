@@ -83,7 +83,7 @@ const ChooseSpecialityBlock = () => {
             <span className='text-6xl text-blue dark:text-white font-bold'>Выбери свою профессию</span>
             <div className='flex flex-wrap gap-7 s:justify-center xxs:flex-col xxs:items-start xxs:w-full'>
               {Specialities.map((x, i) => (
-                <ToggleButton active={i == currentSpeciality} onclick={() => {
+                <ToggleButton active={i == currentSpeciality} key={i} onclick={() => {
                   setcurrentSpeciality(i);
                 }}>{x.title}</ToggleButton>
               ))}
@@ -99,7 +99,7 @@ const ChooseSpecialityBlock = () => {
               {Specialities[currentSpeciality].priceDistant != 0 && <StatPoint number={<>{Specialities[currentSpeciality].priceDistant} <span className='text-3xl font-medium'>тыс. ₽</span></>} className={`flex-col items-start`} text={<>очно-заочное обучение</>} />}
             </div>
           </div>
-          <div className={`hidden flex-row justify-center gap-7 ${blink ? 'opacity-0' : 'opacity-100'} transition-all s:flex minxs:flex-row xxs:flex-wrap xxs:gap-14 `}>
+          <div className={`hidden flex-row justify-center gap-7 ${blink ? 'opacity-0' : 'opacity-100'} transition-all s:flex minxs:flex-row xxs:flex-wrap xxs:gap-14 flex-wrap `}>
             {Specialities[currentSpeciality].budgetplace != 0 && <StatPoint number={Specialities[currentSpeciality].budgetplace} text={<>бюджетных<br />мест</>} className={`flex-row items-center`} />}
             {Specialities[currentSpeciality].paidplace != 0 && <StatPoint number={Specialities[currentSpeciality].paidplace} text={<>платных<br />мест</>} className={`flex-row items-center`} />}
             {Specialities[currentSpeciality].priceIntramural != 0 && <StatPoint number={<>{Specialities[currentSpeciality].priceIntramural} <span className='text-3xl font-medium'>тыс. ₽</span></>} className={`flex-col items-start`} text={<>очное обучение</>} />}

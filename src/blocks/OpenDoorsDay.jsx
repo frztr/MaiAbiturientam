@@ -17,8 +17,8 @@ const OpenDoorsDay = () => {
             </button>
           </div>
         </div>
-        <div className='absolute h-full w-1/2 xl:w-2/5 xl:h-auto right-0 flex flex-col bottom-0 xxs:hidden'>
-          <img src={require('../resources/opendoorsback.png')} className='h-full object-cover ' alt="" srcset="" />
+        <div className='absolute h-full w-1/2 xl:w-2/5 xl:h-auto right-0 flex flex-col bottom-0 md:hidden'>
+          <img src={require('../resources/opendoorsback.png')} className='h-full object-cover  ' alt="" srcSet="" />
         </div>
       </div>
     </div>

@@ -19,9 +19,11 @@ const Header = () => {
           if (html.classList.contains('dark')) {
             html.classList.remove('dark');
             context.setdark(false);
+            document.cookie = "theme:light";
           } else {
             html.classList.add('dark');
             context.setdark(true);
+            document.cookie = "theme:dark";
           }
         }}>
           <Sleep className={`text-blue dark:text-white `} />

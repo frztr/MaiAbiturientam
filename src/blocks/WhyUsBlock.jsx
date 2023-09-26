@@ -37,10 +37,10 @@ const WhyUsBlock = () => {
   }
 
   return (
-    <div className='py-28 px-16 flex flex-col gap-y-24 items-center s:px-8'>
+    <div className='py-28 px-32 flex flex-col gap-y-24 items-center s:px-8'>
       <span className='font-bold text-6xl text-blue dark:text-white'>Почему СФ МАИ</span>
       <div className='flex flex-row justify-between w-full xxs:flex-col xxs:gap-20'>
-        {Points.map((x)=>(<Point image={x.image} text={x.text} />))}
+        {Points.map((x,i)=>(<Point image={x.image} key={i} text={x.text} />))}
       </div>
     </div>
   )

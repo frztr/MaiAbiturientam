@@ -18,7 +18,7 @@ const PreparatoryCourse = () => {
 
   return (
     <div className='p-28 xl:p-16 flex flex-col relative overflow-hidden bg-gradient-67 from-white to-lightblue-250 dark:from-black dark:to-black-250'>
-      <img src={require(`../resources/prepareImage.png`)} className=' absolute right-0 bottom-0 w-1/2 h-full 1.5xl:object-cover 1.5xl:h-auto xxs:hidden ' alt="" srcset="" />
+      <img src={require(`../resources/prepareImage.png`)} className=' absolute right-0 bottom-0 w-1/2 h-full 1.5xl:object-cover 1.5xl:h-auto xxs:hidden ' alt="" srcSet="" />
       <div className='flex flex-col gap-y-8 w-3/5 xl:w-4/5 xxs:w-full'>
         <span className='text-6xl font-bold leading-snug first-letter text-blue dark:text-white xxs:text-5xl xxxs:text-4xl'>Подготовительные курсы МАИ</span>
         <span className='text-blue dark:text-white text-3xl font-medium xl:text-2xl xl:max-w-[80%] xxs:text-xl'>Ступинский филиал МАИ объявляет набор на подготовительные курсы для подготовки к сдаче экзаменов в форме ЕГЭ и участия в олимпиадах.</span>

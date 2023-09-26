@@ -12,7 +12,7 @@ const CallBackForm = () => {
           <Input type="email" placeholder={'Эл. почта'} required/>
         </div>
         <input type="submit" value="Отправить" className='xxs:w-full text-2xl font-semibold leading-snug text-blue dark:text-white bg-lightblue-300 dark:bg-black-300 shadow-blue dark:shadow-transparent shadow-md cursor-pointer w-fit py-5 px-8 rounded-lg' />
-        <img src={require('../resources/formback.png')} className=' w-2/5 aspect-square right-0 bottom-0 absolute xxs:hidden' alt="" srcset="" />
+        <img src={require('../resources/formback.png')} className=' w-2/5 aspect-square right-0 bottom-0 absolute xxs:hidden' alt="" srcSet="" />
       </form>
     </div>
   )

@@ -21,6 +21,10 @@ const Footer = () => {
         {
           link: "https://vuc-mai.ru/",
           content: <>Военная кафедра</>
+        },
+        {
+          link: "https://sfmai.ru/abitur/courses",
+          content: <>Подготовительные курсы</>
         }
       ]
     },
@@ -37,7 +41,7 @@ const Footer = () => {
         },
         {
           link: "https://lk.mai.ru/",
-          content: <>Личный кабинет</>
+          content: <>Личный кабинет абитуриента</>
         },
         {
           link: "https://sfmai.ru/abitur/pano",
@@ -52,7 +56,7 @@ const Footer = () => {
       <div className='flex flex-col gap-y-7'>
         <span className='text-3xl font-bold leading-snug text-blue dark:text-white'>{title}</span>
         <div className='flex flex-col font-medium text-1.5xl leading-snug text-blue dark:text-white gap-y-4'>
-          {items.map((x) => <a href={`${x.link}`}>{x.content}</a>)}
+          {items.map((x,i) => <a key={i} href={`${x.link}`}>{x.content}</a>)}
         </div>
       </div>
     )
@@ -63,7 +67,7 @@ const Footer = () => {
       <div className='flex flex-col gap-y-10 max-w-[1400px] 1.5xl:px-24 w-full xxs:px-8'>
         <div className='grid grid-cols-2 s:flex s:flex-col s:gap-y-10'>
           <div className='grid grid-cols-2 xxxs:flex xxxs:flex-col xxxs:gap-10'>
-            {Menus.map(x => <Menu {...x} />)}
+            {Menus.map((x,i) => <Menu key={i} {...x} />)}
           </div>
           <div className='flex flex-row gap-x-10 justify-between'>
             <div className='flex flex-col gap-y-3'>

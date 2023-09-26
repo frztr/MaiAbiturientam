@@ -103,7 +103,7 @@ const EvaluateYourCapabilities = () => {
               <Select className={`w-92 s:w-full`} onSelectedItemChanged={(i) => {
                 setOtherSubj(i);
               }}>
-                {SubjList.map(x => <Subj {...x} />)}
+                {SubjList.map((x,i) => <Subj key={i} {...x} />)}
               </Select>
               {cont.current != null && height != cont.current.scrollHeight && setheight(cont.current.scrollHeight)}
             </div>
@@ -111,7 +111,7 @@ const EvaluateYourCapabilities = () => {
           <div className='flex flex-col gap-y-4 '>
             <span className='font-semibold text-3xl text-blue dark:text-white text-center'>Проходной балл 2023 года на подходящие направления</span>
             <div className='flex flex-row flex-wrap gap-4 justify-center transition-all xxs:px-8' ref={cont} style={{ height: height }}>
-              {Faculties.map(x => { if (x.subjects.includes(SubjList[otherSubj].name)) return <Facult name={x.name} min={x.min} /> })}
+              {Faculties.map((x,i) => { if (x.subjects.includes(SubjList[otherSubj].name)) return <Facult key={i} name={x.name} min={x.min} /> })}
             </div>
           </div>
         </div>
